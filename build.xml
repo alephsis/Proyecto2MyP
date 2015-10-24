@@ -11,6 +11,7 @@
       <zipfileset dir="${build.dir}" prefix="" />
       <manifest>
         <attribute name="Main-Class" value="unam.myp.Main"/>
+	<attribute name= "Class-Path" value= "lib/sqlite-jdbc-3.8.11.1.jar"/>
       </manifest>
     </jar>
   </target>
@@ -64,6 +65,7 @@
       <classpath>
         <pathelement path="${build.dir}" />
         <pathelement location="${lib.dir}/junit.jar"/>
+	<pathelement location="${lib.dir}/sqlite-jdbc-3.8.11.1.jar" />
       </classpath>
       <batchtest fork="yes">
         <fileset dir="${src.dir}">
@@ -74,7 +76,7 @@
   </target>
 
   <target name = "corre" depends = "proyecto2.jar">
-    <java jar="proyecto2.jar" fork = "true" />
+    <java  jar="proyecto2.jar" fork = "true" />      
   </target>
 
 </project>
